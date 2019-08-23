@@ -108,17 +108,18 @@ class LocalizedStrings {
         });
     }
     
-    
+
     //////////////////////////////////////////////////////////////////////
     // Get a localized string.
     // @param langCode [string]: The language code such as 'en' or 'ja', etc.
     // @param key [string]: The key of the loaded json file.
+    // @param defaultVal [string]: The default value when the key is not exist.
     //////////////////////////////////////////////////////////////////////
-    String(langCode, key) {
+    String(langCode, key, defaultVal = key) {
         if(this.strings[langCode] != null && this.strings[langCode][key] != null) {
             return this.strings[langCode][key];
         } else {
-            return key;
+            return defaultVal;
         }
     }
 
